@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Reservation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>Reservation</h1>
+
+  <form>
+    <label>メニュー</label><br>
+    <select id="menu">
+      <option value="">選択してください</option>
+      <option value="foot">FOOT NAIL</option>
+      <option value="gel">GEL NAIL</option>
+      <option value="christmas">CHRISTMAS NAIL</option>
+    </select><br><br>
+
+    <input type="text" placeholder="お名前"><br><br>
+    <input type="email" placeholder="メール"><br><br>
+    <input type="date"><br><br>
+    <input type="time"><br><br>
+
+    <button type="submit">予約する</button>
+  </form>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const menu = params.get("menu");
+    if (menu) {
+      document.getElementById("menu").value = menu;
+    }
+  </script>
+</body>
+</html>
